@@ -1,6 +1,4 @@
-import './globals.css'
 import { Inter } from 'next/font/google'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -10,8 +8,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+   <>
+     <head>
+      <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+        />
+    </head>
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
+   </>
   )
 }

@@ -1,0 +1,283 @@
+/* fonts.css */
+@font-face {
+    font-family: 'latto';
+    src: url('/public/fonts/lato.woff') format('woff');
+    /* Add more src lines if you have multiple font weights/styles */
+  }
+  
+  /* Example: for a bold variant */
+  @font-face {
+    font-family: 'latto';
+    font-weight: bold;
+    src: url('/public/fonts/Lato-Bold.woff2') format('woff2');
+  }
+
+/* Header */
+.ptr-fig-sc .desktop-header {
+    position: absolute;
+    z-index: 1001;
+}
+.mobile-header {
+    display: none;
+}
+.ceucourses-header, .mobile-header {
+    position: fixed;
+    z-index: 1001;
+    width: 100%;
+    top:0;
+}
+div#inr-header ul li a {
+    font-weight: inherit;
+    font-family: latto, arial, sans-serif;
+    letter-spacing: 0.114em;
+    text-indent: 4px;
+}
+/* Ceu Courses Header */
+.ceucourses-header{
+    background: linear-gradient(to right, rgba(34, 189, 203, 0.8), rgba(135, 200, 90, 0.8));
+    z-index: 1007;
+}
+.ceucourses-header ul li a {
+    color:#fff;
+}
+.ceucourses-header a.block {
+    width: 80px;
+}
+@media screen and (max-width:840px) {
+    .mobile-header {
+        display: block;
+    }
+
+    .desktop-header {
+        display: none;
+    }
+}
+.second-page-header ul li a {
+    color:#323232 !important;
+}
+h1, h2, h3, h4 {
+    font-family: latto;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.second-section h3, .second-section p {
+    color: #323232;
+    margin-bottom: 20px;
+}
+/* Home */
+.ptr-fig-sc {
+    background-image: url(/images/FIGK12.png);
+}
+.second-page {
+    background-image: url(/images/3rdsecbg.png);
+}
+.ptr-fig-sc .desktop-header ul a {
+    color:#fff;
+}
+.second-page,
+.ptr-fig-sc {
+    background-repeat: repeat-y;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    animation: bgslide 150s infinite;
+}
+.fig-icons::before,
+.figdot::before {
+    content: '';
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 10007 !important;
+    overflow: visible;
+    opacity: 1;
+}
+.fig-icons::before {
+    background-image: url(/images/rev-sign.png);
+    margin-top: -4%;
+    margin-left: -3%;
+    animation: iconmove 1s infinite alternate;
+}
+.figdot::before {
+    background-image: url(/images/dot.png);
+    right: 3%;
+    margin-top: -4%;
+    animation: rotation 8s infinite linear;
+}
+.figdot img,
+.fig-icons img {
+    animation: imagemove 1s infinite alternate;
+    margin-top: 50px;
+}
+.fig-icons img {
+    width: 200px;
+}
+.figdot img {
+    width: 100px;
+    float: right;
+}
+/* Second Page */
+.fig-ptr h5 span {
+    text-shadow: -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    font-size: 65px;
+    color: #42BEB6;
+}
+.fig-portfolio img {
+    max-width: 100%;
+    width: 300px;
+    height: 111px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.innr-fig {
+    position: relative;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.8s, transform 0.8s ease-in-out;
+    transform: translateY(100%);
+}
+
+.second-section p {
+    font-size: 20px;
+}
+
+
+/* ScrollButton */
+.button-btm-top {
+    position: absolute;
+    bottom: 2%;
+    z-index: 1002;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.button-btm-top a {
+    padding: 4px 12px;
+    background: #304EBE;
+    border: 0px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 23px;
+    border-radius: 4px;
+}
+.button-btm-top a {
+    animation: imagemove 1s infinite alternate;
+}
+.dres-img {
+    width: 50%;
+    float: right;
+    transform: rotateY(168deg);
+}
+.dres-img img {
+    width:500px;    
+}
+
+
+
+
+/* Animation */
+
+/* Key Frames */
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes bgslide {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: 0 -10000px
+    }
+}
+
+@keyframes iconmove {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    100% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+}
+
+@keyframes imagemove {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    100% {
+        -webkit-transform: translateY(-14px);
+        transform: translateY(-14px)
+    }
+}
+
+
+@keyframes bgslide {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: 0 -10000px
+    }
+}

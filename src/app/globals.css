@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* fonts.css */
+@font-face {
+  font-family: 'latto';
+  src: url('/fonts/lato.woff') format('woff');
+
+  /* Add more src lines if you have multiple font weights/styles */
+}
+
+/* Example: for a bold variant */
+@font-face {
+  font-family: 'latto';
+  font-weight: bold;
+  src: url('/fonts/Lato-Bold.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: 'latto';
+  font-weight: normal;
+  src: url('/fonts/Lato-Regular.eot') format('eot');
+}
+
+@font-face {
+  font-family: 'latto';
+  font-weight: lighter;
+  src: url('/fonts/Lato-Light.otf') format('otf');
+}
+
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +48,4 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
